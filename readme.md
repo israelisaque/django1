@@ -1,26 +1,43 @@
 # django1 - projeto web simples
 
-Desenvolvimento de um CRUD simples de produtos em Django com 
-página index e descrição de produto. O mesmo foi desenvolvido como parte de estudo e prática 
-no desenvolvimento web com python.
+Desenvolvimento de um simples CRUD de produtos utilizando Python e Django, como descrito 
+no curso https://www.udemy.com/course/programacao-web-com-django-framework-do-basico-ao-avancado/
 
 ## Para rodar a app: 
 
-`python -m venv venv`
-`venv\Script\activate`
-`pip install -r requirements.txt`
+```bash
+python -m venv venv
+```
 
-`python manage.py runserver`
+```bash
+Linux:
+source venv/bin/activate
+OU
+. venv/bin/activate
+```
+
+```bash
+Windows:
+.\venv\Scripts\activate
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+python manage.py runserver
+```
 
 ## Criando um usuário no painel admin:
 
-`python manage.py createsuperuser`
+```bash
+python manage.py createsuperuser
+```
 
-- após a criação do superuser, basta rodar a app e digitar no final do 
+- Após a criação do superuser, basta rodar a app e digitar no final do 
 - endereço/admin para realizar o login
 
 #### Dependências:
-- python-3.11.1
-- Django 4.1.7
-
-obs: demais dependências em requirements.txt
+- python: 3.11
+- django: 4.1
