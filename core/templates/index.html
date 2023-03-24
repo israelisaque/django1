@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Django 1 - Index</title>
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
 </head>
 <body>
     <div style="margin: auto; display: flex; flex-direction: column; justify-content: space-between; align-items: center">
@@ -20,27 +22,32 @@
         <h2>{{ curso }}</h2>
         <p>{{ outro }}</p>
 
-        <table style="margin-top: 20px">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for produto in produtos %}
+        <div class="container">
+            <table class="table table-striped" style="margin-top: 20px">
+                <thead>
                     <tr>
-                         <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
-                         <td>{{ produto.preco }}</td>
+                        <th>Produto</th>
+                        <th>Preço</th>
                     </tr>
-                {% endfor%}
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for produto in produtos %}
+                        <tr>
+                             <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                             <td>{{ produto.preco }}</td>
+                        </tr>
+                    {% endfor%}
+                </tbody>
+            </table>
+        </div>
 
-        <button style="margin-top: 20px" onclick="teste()">Clique-me</button>
+        <button class="btn btn-primary" style="margin-top: 20px" onclick="teste()">Clique-me</button>
     </div>
 
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
 
 </body>
 </html>
